@@ -9,7 +9,7 @@ import pandas as pd
 
 st.set_page_config(
     page_title="Customer Query Assistant",
-    page_icon="💬",
+    page_icon="comment",
     layout="wide"
 )
 
@@ -48,7 +48,7 @@ if context_text:
             result = qa_pipeline(question=user_query, context=context_text)
             
             # Display the result
-            st.success("✅ Answer found!")
+            st.success("Answer found")
             st.write(f"**Answer:** {result['answer']}")
             st.write(f"**Confidence Score:** {result['score']:.2%}")
             
@@ -59,7 +59,7 @@ if context_text:
                 "score": result['score']
             })
         except Exception as e:
-            st.error(f"❌ Error: {str(e)}")
+            st.error(f"Error: {str(e)}")
     
     # Display conversation history
     if st.session_state.messages:
@@ -70,4 +70,4 @@ if context_text:
                 st.write(f"**Answer:** {msg['answer']}")
                 st.write(f"**Confidence:** {msg['score']:.2%}")
 else:
-    st.info("👈 Please enter context text in the sidebar to begin asking questions.")
+    st.info("Please enter context text in the sidebar to begin asking questions.")

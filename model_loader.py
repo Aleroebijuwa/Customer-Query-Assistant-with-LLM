@@ -8,7 +8,7 @@ try:
     TRANSFORMERS_AVAILABLE = True
 except ImportError:
     TRANSFORMERS_AVAILABLE = False
-    print(" Transformers library not available. Install with: pip install transformers")
+    print("Transformers library not available. Install with: pip install transformers")
 
 def load_model_and_tokenizer(model_name: str):
     """
@@ -29,7 +29,7 @@ def load_model_and_tokenizer(model_name: str):
     try:
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-        print(f" Model and tokenizer loaded successfully!")
+        print(f"Model and tokenizer loaded successfully")
         return tokenizer, model
     except Exception as e:
         print(f"Error loading model: {str(e)}")
@@ -75,19 +75,10 @@ def main():
     """Main function to demonstrate model loading and response generation."""
     
     if not TRANSFORMERS_AVAILABLE:
-        print("\n" + "="*70)
-        print("  TRANSFORMERS LIBRARY NOT INSTALLED")
-        print("="*70)
-        print("\nTo run this script, install the required packages:")
-        print("  pip install transformers torch")
-        print("\nFor long paths on Windows (OneDrive), you may need to:")
-        print("  1. Move project to a shorter path (e.g., C:\\Projects\\)")
-        print("  2. Or configure pip to handle long paths")
-        print("\nModel loading logic is implemented and ready to use.")
+        print("Transformers library not installed")
+        print("Install with: pip install transformers torch")
         return
     
-    # Choose a lightweight, efficient model suitable for customer queries
-    # google/flan-t5-small is a good choice: small, fast, and good at instruction following
     model_name = "google/flan-t5-small"
     
     # Sample queries to test the model
@@ -107,22 +98,13 @@ def main():
             print("Failed to load model. Please check your internet connection and try again.")
             return
         
-        print("\n" + "="*70)
-        print("GENERATING RESPONSES TO SAMPLE QUERIES")
-        print("="*70 + "\n")
-        
-        # Generate responses for each query
         for i, query in enumerate(sample_queries, 1):
-            print(f"[Query {i}]")
-            print(f" Query: {query}")
-            
-            # Generate response
+            print(f"Query {i}: {query}")
             response = generate_response(tokenizer, model, query)
-            print(f" Response: {response}")
-            print("-" * 70 + "\n")
+            print(f"Response: {response}\n")
             
     except Exception as e:
-        print(f" Error: {str(e)}")
+        print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
     main()

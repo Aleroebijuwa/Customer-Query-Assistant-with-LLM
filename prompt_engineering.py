@@ -252,5 +252,5 @@ if __name__ == "__main__":
     print(structured_prompt)
     
     print("\n" + "="*70)
-    print("✅ Prompt engineering module loaded successfully!")
+    print("Prompt engineering module loaded")
     print("="*70)

@@ -173,8 +173,8 @@ if __name__ == "__main__":
     # Save to CSV
     dataset.to_csv('customer_queries.csv', index=False)
     
-    print("✅ Synthetic dataset generated successfully!")
-    print(f"📊 Total records: {len(dataset)}")
-    print(f"📁 File saved: customer_queries.csv")
+    print("Synthetic dataset generated successfully")
+    print(f"Total records: {len(dataset)}")
+    print(f"File saved: customer_queries.csv")
     print(f"\nDataset Preview:")
     print(dataset.head(10))
