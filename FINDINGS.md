@@ -446,4 +446,4 @@ unpredictably.
 | Medium | Require negation-awareness in the bias detector, or drop `bias` from the harmful-keyword list |
 | Low | Split multi-part questions and answer each separately |
 | Low | Load the knowledge base from files rather than hard-coding it |
-| Low | Remove `streamlit_app.py`, a stale duplicate of `app.py` that still calls the removed pipeline API |
+| Done | Removed `streamlit_app.py`, a stale duplicate of `app.py` that still called the removed pipeline API |
