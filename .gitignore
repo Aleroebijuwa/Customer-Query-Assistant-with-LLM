@@ -12,6 +12,14 @@ __pycache__/
 models/
 .cache/
 
+# Generated at runtime by vector_store.py
+documents.pkl
+vector_store.pkl
+
+# Training run artifacts
+fine_tune_log*.json
+logs/
+
 # Editor / OS files
 .vscode/
 .idea/

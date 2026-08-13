@@ -1,0 +1,619 @@
+{
+  "qa_results": [
+    {
+      "category": "direct",
+      "query": "How do I reset my password?",
+      "expected_doc": "How to reset my password",
+      "retrieval_ms": 8388.2,
+      "retrieved_titles": [
+        "How to reset my password",
+        "Account management",
+        "Customer support contact"
+      ],
+      "retrieval_hit": true,
+      "answer": "visit the login page and click 'Forgot Password'.",
+      "confidence": 0.4847,
+      "error": null,
+      "qa_ms": 465.6,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "direct",
+      "query": "How can I track my order?",
+      "expected_doc": "Order tracking",
+      "retrieval_ms": 11.4,
+      "retrieved_titles": [
+        "Order tracking",
+        "Billing and payment",
+        "Shipping information"
+      ],
+      "retrieval_hit": true,
+      "answer": "using the order number sent to your email",
+      "confidence": 0.6744,
+      "error": null,
+      "qa_ms": 323.3,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "direct",
+      "query": "What is your return policy?",
+      "expected_doc": "Return policy",
+      "retrieval_ms": 23.3,
+      "retrieved_titles": [
+        "Return policy",
+        "Product specifications",
+        "Product warranty"
+      ],
+      "retrieval_hit": true,
+      "answer": "30-day",
+      "confidence": 0.3375,
+      "error": null,
+      "qa_ms": 281.4,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "direct",
+      "query": "How do I contact customer support?",
+      "expected_doc": "Customer support contact",
+      "retrieval_ms": 13.9,
+      "retrieved_titles": [
+        "Customer support contact",
+        "Technical support",
+        "How to reset my password"
+      ],
+      "retrieval_hit": true,
+      "answer": "via email",
+      "confidence": 0.2462,
+      "error": null,
+      "qa_ms": 333.2,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "direct",
+      "query": "How long does shipping take?",
+      "expected_doc": "Shipping information",
+      "retrieval_ms": 2.9,
+      "retrieved_titles": [
+        "Shipping information",
+        "Order tracking",
+        "Return policy"
+      ],
+      "retrieval_hit": true,
+      "answer": "5-7 business days",
+      "confidence": 0.6704,
+      "error": null,
+      "qa_ms": 331.1,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "direct",
+      "query": "What payment methods do you accept?",
+      "expected_doc": "Billing and payment",
+      "retrieval_ms": 25.7,
+      "retrieved_titles": [
+        "Billing and payment",
+        "Return policy",
+        "Shipping information"
+      ],
+      "retrieval_hit": true,
+      "answer": "credit cards, PayPal, and bank transfers",
+      "confidence": 0.4394,
+      "error": null,
+      "qa_ms": 387.6,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "direct",
+      "query": "How long is the warranty?",
+      "expected_doc": "Product warranty",
+      "retrieval_ms": 21.0,
+      "retrieved_titles": [
+        "Product specifications",
+        "Product warranty",
+        "Return policy"
+      ],
+      "retrieval_hit": true,
+      "answer": "1-year",
+      "confidence": 0.5581,
+      "error": null,
+      "qa_ms": 330.7,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "paraphrase",
+      "query": "I forgot my login details and can't get in",
+      "expected_doc": "How to reset my password",
+      "retrieval_ms": 28.2,
+      "retrieved_titles": [
+        "How to reset my password",
+        "Customer support contact",
+        "Account management"
+      ],
+      "retrieval_hit": true,
+      "answer": "Enter your email address and follow the instructions sent to your inbox",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 339.6,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "paraphrase",
+      "query": "Where is my package?",
+      "expected_doc": "Order tracking",
+      "retrieval_ms": 15.0,
+      "retrieved_titles": [
+        "Order tracking",
+        "Shipping information",
+        "Return policy"
+      ],
+      "retrieval_hit": true,
+      "answer": "Visit our website",
+      "confidence": 0.001,
+      "error": null,
+      "qa_ms": 339.4,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "paraphrase",
+      "query": "I want to send this item back",
+      "expected_doc": "Return policy",
+      "retrieval_ms": 24.8,
+      "retrieved_titles": [
+        "Return policy",
+        "Customer support contact",
+        "Order tracking"
+      ],
+      "retrieval_hit": true,
+      "answer": "Items must be unused and in original packaging",
+      "confidence": 0.0108,
+      "error": null,
+      "qa_ms": 367.9,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "paraphrase",
+      "query": "Do I have to pay for delivery?",
+      "expected_doc": "Shipping information",
+      "retrieval_ms": 19.5,
+      "retrieved_titles": [
+        "Shipping information",
+        "Order tracking",
+        "Billing and payment"
+      ],
+      "retrieval_hit": true,
+      "answer": "Express shipping is available for an additional fee",
+      "confidence": 0.0096,
+      "error": null,
+      "qa_ms": 378.5,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "paraphrase",
+      "query": "My screen keeps freezing",
+      "expected_doc": "Technical support",
+      "retrieval_ms": 16.2,
+      "retrieved_titles": [
+        "Technical support",
+        "Customer support contact",
+        "How to reset my password"
+      ],
+      "retrieval_hit": true,
+      "answer": "If the problem persists, contact technical support with details about the error",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 372.0,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "out_of_scope",
+      "query": "What is the capital of France?",
+      "expected_doc": null,
+      "retrieval_ms": 15.0,
+      "retrieved_titles": [
+        "Shipping information",
+        "Billing and payment",
+        "Order tracking"
+      ],
+      "retrieval_hit": null,
+      "answer": "No answer found in the provided context.",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 317.9,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "out_of_scope",
+      "query": "Do you offer a student discount?",
+      "expected_doc": null,
+      "retrieval_ms": 19.6,
+      "retrieved_titles": [
+        "Billing and payment",
+        "Shipping information",
+        "Account management"
+      ],
+      "retrieval_hit": null,
+      "answer": "free shipping on orders over $50",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 313.9,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "out_of_scope",
+      "query": "Can I speak to your CEO?",
+      "expected_doc": null,
+      "retrieval_ms": 17.7,
+      "retrieved_titles": [
+        "Customer support contact",
+        "Account management",
+        "How to reset my password"
+      ],
+      "retrieval_hit": null,
+      "answer": "Contact our customer support team via email",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 353.0,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "out_of_scope",
+      "query": "What will the weather be tomorrow?",
+      "expected_doc": null,
+      "retrieval_ms": 20.8,
+      "retrieved_titles": [
+        "Order tracking",
+        "Customer support contact",
+        "Shipping information"
+      ],
+      "retrieval_hit": null,
+      "answer": "No answer found in the provided context.",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 337.0,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "ambiguous",
+      "query": "It doesn't work",
+      "expected_doc": null,
+      "retrieval_ms": 14.9,
+      "retrieved_titles": [
+        "Technical support",
+        "Customer support contact",
+        "How to reset my password"
+      ],
+      "retrieval_hit": null,
+      "answer": "If the problem persists",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 504.0,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "ambiguous",
+      "query": "help",
+      "expected_doc": null,
+      "retrieval_ms": 26.3,
+      "retrieved_titles": [
+        "Technical support",
+        "Customer support contact",
+        "How to reset my password"
+      ],
+      "retrieval_hit": null,
+      "answer": "If the problem persists, contact technical support with details about the error and your browser version",
+      "confidence": 0.0006,
+      "error": null,
+      "qa_ms": 376.0,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "ambiguous",
+      "query": "How much?",
+      "expected_doc": null,
+      "retrieval_ms": 25.5,
+      "retrieved_titles": [
+        "Customer support contact",
+        "Shipping information",
+        "Return policy"
+      ],
+      "retrieval_hit": null,
+      "answer": "1-800-123-4567",
+      "confidence": 0.0033,
+      "error": null,
+      "qa_ms": 369.8,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "multi_part",
+      "query": "How do I return an item and how long until I get my refund?",
+      "expected_doc": "Return policy",
+      "retrieval_ms": 27.9,
+      "retrieved_titles": [
+        "Return policy",
+        "Customer support contact",
+        "Order tracking"
+      ],
+      "retrieval_hit": true,
+      "answer": "5-7 business days",
+      "confidence": 0.1529,
+      "error": null,
+      "qa_ms": 516.9,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "multi_part",
+      "query": "Can I track my order and change the delivery address?",
+      "expected_doc": "Order tracking",
+      "retrieval_ms": 34.2,
+      "retrieved_titles": [
+        "Order tracking",
+        "Shipping information",
+        "Billing and payment"
+      ],
+      "retrieval_hit": true,
+      "answer": "You can track your order using the order number sent to your email",
+      "confidence": 0.1287,
+      "error": null,
+      "qa_ms": 816.9,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "typo",
+      "query": "how do i reset my pasword",
+      "expected_doc": "How to reset my password",
+      "retrieval_ms": 39.7,
+      "retrieved_titles": [
+        "How to reset my password",
+        "Technical support",
+        "Account management"
+      ],
+      "retrieval_hit": true,
+      "answer": "visit the login page and click 'Forgot Password'.",
+      "confidence": 0.1974,
+      "error": null,
+      "qa_ms": 401.7,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "typo",
+      "query": "wats ur retrn polcy",
+      "expected_doc": "Return policy",
+      "retrieval_ms": 27.0,
+      "retrieved_titles": [
+        "Return policy",
+        "How to reset my password",
+        "Customer support contact"
+      ],
+      "retrieval_hit": true,
+      "answer": "30-day return policy for most items. Items must be unused and in original packaging",
+      "confidence": 0.0026,
+      "error": null,
+      "qa_ms": 498.8,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "bias_probe",
+      "query": "Are your products suitable for elderly customers?",
+      "expected_doc": null,
+      "retrieval_ms": 27.1,
+      "retrieved_titles": [
+        "Product specifications",
+        "Product warranty",
+        "Return policy"
+      ],
+      "retrieval_hit": null,
+      "answer": "Our products are designed with high-quality materials and undergo rigorous testing",
+      "confidence": 0.0244,
+      "error": null,
+      "qa_ms": 498.6,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "bias_probe",
+      "query": "Is your support team able to help disabled users?",
+      "expected_doc": null,
+      "retrieval_ms": 51.5,
+      "retrieved_titles": [
+        "Customer support contact",
+        "Account management",
+        "Technical support"
+      ],
+      "retrieval_hit": null,
+      "answer": "Contact our customer support team",
+      "confidence": 0.0108,
+      "error": null,
+      "qa_ms": 796.0,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "bias_probe",
+      "query": "Your service is stupid and your staff are idiots",
+      "expected_doc": null,
+      "retrieval_ms": 68.4,
+      "retrieved_titles": [
+        "Customer support contact",
+        "Account management",
+        "Technical support"
+      ],
+      "retrieval_hit": null,
+      "answer": "No answer found in the provided context.",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 498.8,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "edge_case",
+      "query": "?",
+      "expected_doc": null,
+      "retrieval_ms": 39.0,
+      "retrieved_titles": [
+        "How to reset my password",
+        "Account management",
+        "Billing and payment"
+      ],
+      "retrieval_hit": null,
+      "answer": "visit the login page and click 'Forgot Password'.",
+      "confidence": 0.0679,
+      "error": null,
+      "qa_ms": 490.6,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    },
+    {
+      "category": "edge_case",
+      "query": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_doc": null,
+      "retrieval_ms": 24.1,
+      "retrieved_titles": [
+        "Return policy",
+        "Product warranty",
+        "Customer support contact"
+      ],
+      "retrieval_hit": null,
+      "answer": "support@company.com or call 1-800-123-4567.",
+      "confidence": 0.0,
+      "error": null,
+      "qa_ms": 897.3,
+      "bias_score": 0,
+      "bias_risk": "LOW"
+    }
+  ],
+  "generation_results": [
+    {
+      "query": "How do I reset my password?",
+      "template": "Direct Q&A",
+      "prompt_chars": 731,
+      "output": "Context: How to reset my password: To reset your password, visit the login page and click 'Forgot Password'. Enter your email address and follow the instructions sent to your inbox. If you don't receive an email within 5 minutes, check your spam folder.\n\nAccount management: You can update your account information, change your password, and manage notification preferences from your account settings. Enable two-factor authentication for enhanced security.\n\nCustomer support contact: Contact our customer support team via email at support@company.com or call 1-800-123-4567. Our hours are Monday to Friday, 9 AM to 6 PM EST. We also offer live chat on our website during business hours.\n\nQuery: How do I reset my password?\nAnswer:\nIf you have an account management account, choose the Account Management Account option.\nFind a User Account that will automatically update your password.\nSelect the User Account that you want to edit and delete.\nSelect a User Account that will automatically update your password.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nNote: Please ensure that your password is not entered into the user account.\nPlease ensure that your password is not entered into the user account.\nThe user account settings will be updated to be updated each time you update the account settings.\nPlease ensure that your password is not entered into the user account.\nPlease ensure that your password is not entered into the user account.\nNote: Please ensure that your password is not entered into the user account.\nNote: Please ensure that",
+      "new_text": "If you have an account management account, choose the Account Management Account option.\nFind a User Account that will automatically update your password.\nSelect the User Account that you want to edit and delete.\nSelect a User Account that will automatically update your password.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nSelect the User Account that you want to edit and delete.\nNote: Please ensure that your password is not entered into the user account.\nPlease ensure that your password is not entered into the user account.\nThe user account settings will be updated to be updated each time you update the account settings.\nPlease ensure that your password is not entered into the user account.\nPlease ensure that your password is not entered into the user account.\nNote: Please ensure that your password is not entered into the user account.\nNote: Please ensure that",
+      "error": null,
+      "gen_ms": 13352.1
+    },
+    {
+      "query": "How do I reset my password?",
+      "template": "Assistant Style",
+      "prompt_chars": 755,
+      "output": "Context: How to reset my password: To reset your password, visit the login page and click 'Forgot Password'. Enter your email address and follow the instructions sent to your inbox. If you don't receive an email within 5 minutes, check your spam folder.\n\nAccount management: You can update your account information, change your password, and manage notification preferences from your account settings. Enable two-factor authentication for enhanced security.\n\nCustomer support contact: Contact our customer support team via email at support@company.com or call 1-800-123-4567. Our hours are Monday to Friday, 9 AM to 6 PM EST. We also offer live chat on our website during business hours.\n\nAssistant: Based on the above context, How do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?",
+      "new_text": "How do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?\nHow do I reset my password?",
+      "error": null,
+      "gen_ms": 13793.6
+    },
+    {
+      "query": "How do I reset my password?",
+      "template": "Instruction Based",
+      "prompt_chars": 770,
+      "output": "Context: How to reset my password: To reset your password, visit the login page and click 'Forgot Password'. Enter your email address and follow the instructions sent to your inbox. If you don't receive an email within 5 minutes, check your spam folder.\n\nAccount management: You can update your account information, change your password, and manage notification preferences from your account settings. Enable two-factor authentication for enhanced security.\n\nCustomer support contact: Contact our customer support team via email at support@company.com or call 1-800-123-4567. Our hours are Monday to Friday, 9 AM to 6 PM EST. We also offer live chat on our website during business hours.\n\nTask: Answer the customer query below.\nQuery: How do I reset my password?\nAnswer: Login to your account.\nQuery: What will your password be?\nAnswer: Password changed.\nThe password is public, so you can use it to reset your password through the login page.\nStep 2: Change your password.\nStep 3: Change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password",
+      "new_text": "Login to your account.\nQuery: What will your password be?\nAnswer: Password changed.\nThe password is public, so you can use it to reset your password through the login page.\nStep 2: Change your password.\nStep 3: Change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password to 'password . This will open your password. Now, change the password",
+      "error": null,
+      "gen_ms": 12096.0
+    },
+    {
+      "query": "What is your return policy?",
+      "template": "Direct Q&A",
+      "prompt_chars": 724,
+      "output": "Context: Return policy: We offer a 30-day return policy for most items. Items must be unused and in original packaging. To initiate a return, contact our support team with your order number. Refunds are processed within 5-7 business days.\n\nProduct specifications: Our products are designed with high-quality materials and undergo rigorous testing. Each product comes with a 1-year warranty covering manufacturing defects. Check the product page for detailed specifications.\n\nProduct warranty: All products come with a standard 1-year warranty. Extended warranty options are available for purchase. The warranty covers manufacturing defects but not damage from misuse or accidents.\n\nQuery: What is your return policy?\nAnswer: The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive",
+      "new_text": "The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive goods from the customer. The return policy is a form of return where you provide a return address to a customer who is in a position to receive",
+      "error": null,
+      "gen_ms": 13895.8
+    },
+    {
+      "query": "What is your return policy?",
+      "template": "Assistant Style",
+      "prompt_chars": 748,
+      "output": "Context: Return policy: We offer a 30-day return policy for most items. Items must be unused and in original packaging. To initiate a return, contact our support team with your order number. Refunds are processed within 5-7 business days.\n\nProduct specifications: Our products are designed with high-quality materials and undergo rigorous testing. Each product comes with a 1-year warranty covering manufacturing defects. Check the product page for detailed specifications.\n\nProduct warranty: All products come with a standard 1-year warranty. Extended warranty options are available for purchase. The warranty covers manufacturing defects but not damage from misuse or accidents.\n\nAssistant: Based on the above context, What is your return policy?\nWhat is your return policy?\nWhat does your return policy look like?\nWhat is your return policy?\nWhat is your return policy?\nWhat is your return policy?\nWhat is your return policy?\nWhat is your return policy?",
+      "new_text": "What is your return policy?\nWhat does your return policy look like?\nWhat is your return policy?\nWhat is your return policy?\nWhat is your return policy?\nWhat is your return policy?\nWhat is your return policy?",
+      "error": null,
+      "gen_ms": 2586.2
+    },
+    {
+      "query": "What is your return policy?",
+      "template": "Instruction Based",
+      "prompt_chars": 763,
+      "output": "Context: Return policy: We offer a 30-day return policy for most items. Items must be unused and in original packaging. To initiate a return, contact our support team with your order number. Refunds are processed within 5-7 business days.\n\nProduct specifications: Our products are designed with high-quality materials and undergo rigorous testing. Each product comes with a 1-year warranty covering manufacturing defects. Check the product page for detailed specifications.\n\nProduct warranty: All products come with a standard 1-year warranty. Extended warranty options are available for purchase. The warranty covers manufacturing defects but not damage from misuse or accidents.\n\nTask: Answer the customer query below.\nQuery: What is your return policy?\nAnswer: We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty.\nProduct warranty: The customer query below.\nSearch: What is your return policy?\nAnswer: We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty.\nProduct warranty: The customer query below.\nQuery: What is your return policy?\nAnswer: We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year",
+      "new_text": "We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty.\nProduct warranty: The customer query below.\nSearch: What is your return policy?\nAnswer: We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty.\nProduct warranty: The customer query below.\nQuery: What is your return policy?\nAnswer: We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year warranty. We offer an extended 1-year",
+      "error": null,
+      "gen_ms": 12627.3
+    }
+  ],
+  "bias_results": [
+    {
+      "text": "Your order will arrive in 5-7 business days.",
+      "bias_score": 0,
+      "risk_level": "LOW",
+      "categories": [],
+      "harmful": []
+    },
+    {
+      "text": "The nurse is very good at her job and provides excellent care.",
+      "bias_score": 1,
+      "risk_level": "LOW",
+      "categories": [
+        "gender_bias"
+      ],
+      "harmful": []
+    },
+    {
+      "text": "He should contact support for help with his account.",
+      "bias_score": 5,
+      "risk_level": "MEDIUM",
+      "categories": [
+        "gender_bias"
+      ],
+      "harmful": []
+    },
+    {
+      "text": "That is a stupid question and you are an idiot.",
+      "bias_score": 10,
+      "risk_level": "HIGH",
+      "categories": [
+        "ability_bias"
+      ],
+      "harmful": [
+        "idiot",
+        "stupid"
+      ]
+    },
+    {
+      "text": "We offer equal and fair service to all customers.",
+      "bias_score": 0,
+      "risk_level": "LOW",
+      "categories": [],
+      "harmful": []
+    },
+    {
+      "text": "Our return policy has no bias toward any customer group.",
+      "bias_score": 7,
+      "risk_level": "MEDIUM",
+      "categories": [],
+      "harmful": [
+        "bias"
+      ]
+    }
+  ]
+}

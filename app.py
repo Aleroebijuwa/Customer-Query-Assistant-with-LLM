@@ -4,6 +4,7 @@ from transformers import pipeline
 import time
 from vector_store import retrieve_documents, load_vector_store, get_all_documents
 from bias_detector import analyze_bias, get_bias_warning_message
+from qa_engine import load_qa_model, answer_question
 
 
 def load_dataset():
@@ -16,9 +17,9 @@ def load_dataset():
 
 
 @st.cache_resource
-def load_qa_pipeline():
-    """Load the QA pipeline"""
-    return pipeline("question-answering", model="deepset/roberta-base-squad2")
+def load_qa_engine():
+    """Load the extractive QA model and tokenizer"""
+    return load_qa_model()
 
 
 @st.cache_resource
@@ -170,10 +171,12 @@ def main():
                             retrieved_context = "\n\n".join(retrieved_docs)
                     
                     if model_type == "Question Answering":
-                        qa_pipeline = load_qa_pipeline()
+                        qa_tokenizer, qa_model = load_qa_engine()
                         context_to_use = retrieved_context if use_rag else context_text
-                        
-                        result = qa_pipeline(question=user_query, context=context_to_use)
+
+                        result = answer_question(
+                            qa_tokenizer, qa_model, user_query, context_to_use
+                        )
                         
                         response = result.get("answer", "No answer found")
                         confidence = result.get("score", 0)

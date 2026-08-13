@@ -1,9 +1,14 @@
-huggingface-hub
-streamlit
-transformers
-torch
-pandas
-numpy
-datasets
-faiss-cpu
-sentence-transformers
+# Pinned to the versions the application was tested against.
+# Unpinned versions previously allowed transformers 5.x into the build, which
+# removed the "question-answering" pipeline task and broke QA mode at runtime.
+streamlit==1.61.1
+transformers==5.15.0
+torch==2.13.0
+huggingface-hub==1.27.0
+pandas==3.0.5
+numpy==2.4.6
+datasets==5.0.1
+# Required by transformers Trainer in src/fine_tune.py; not optional.
+accelerate==1.14.0
+faiss-cpu==1.15.0
+sentence-transformers==5.7.0
