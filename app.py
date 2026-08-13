@@ -1,5 +1,5 @@
 """
-Customer Query Assistant with LLM
+Customer Query Assistant
 Main Streamlit application
 """
 
@@ -9,11 +9,11 @@ import pandas as pd
 
 st.set_page_config(
     page_title="Customer Query Assistant",
-    page_icon="🤖",
+    page_icon="💬",
     layout="wide"
 )
 
-st.title("🤖 Customer Query Assistant with LLM")
+st.title("Customer Query Assistant")
 st.write("Powered by Hugging Face Transformers")
 
 # Initialize session state for conversation history

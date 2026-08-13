@@ -1,6 +1,6 @@
 """
 Model Loader for Customer Query Assistant
-Loads a pre-trained LLM from Hugging Face and generates responses to queries.
+Loads a pre-trained model from Hugging Face and generates responses to queries.
 """
 
 try:
@@ -8,7 +8,7 @@ try:
     TRANSFORMERS_AVAILABLE = True
 except ImportError:
     TRANSFORMERS_AVAILABLE = False
-    print("⚠️  Transformers library not available. Install with: pip install transformers")
+    print(" Transformers library not available. Install with: pip install transformers")
 
 def load_model_and_tokenizer(model_name: str):
     """
@@ -29,10 +29,10 @@ def load_model_and_tokenizer(model_name: str):
     try:
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-        print(f"✅ Model and tokenizer loaded successfully!")
+        print(f" Model and tokenizer loaded successfully!")
         return tokenizer, model
     except Exception as e:
-        print(f"❌ Error loading model: {str(e)}")
+        print(f"Error loading model: {str(e)}")
         return None, None
 
 def generate_response(tokenizer, model, query: str, max_length: int = 128) -> str:
@@ -41,7 +41,7 @@ def generate_response(tokenizer, model, query: str, max_length: int = 128) -> st
     
     Args:
         tokenizer: The tokenizer for encoding the query
-        model: The pre-trained language model
+        model: The pre-trained model
         query (str): The input query/prompt
         max_length (int): Maximum length of generated response
         
@@ -76,7 +76,7 @@ def main():
     
     if not TRANSFORMERS_AVAILABLE:
         print("\n" + "="*70)
-        print("⚠️  TRANSFORMERS LIBRARY NOT INSTALLED")
+        print("  TRANSFORMERS LIBRARY NOT INSTALLED")
         print("="*70)
         print("\nTo run this script, install the required packages:")
         print("  pip install transformers torch")
@@ -114,15 +114,15 @@ def main():
         # Generate responses for each query
         for i, query in enumerate(sample_queries, 1):
             print(f"[Query {i}]")
-            print(f"❓ Query: {query}")
+            print(f" Query: {query}")
             
             # Generate response
             response = generate_response(tokenizer, model, query)
-            print(f"🤖 Response: {response}")
+            print(f" Response: {response}")
             print("-" * 70 + "\n")
             
     except Exception as e:
-        print(f"❌ Error: {str(e)}")
+        print(f" Error: {str(e)}")
 
 if __name__ == "__main__":
     main()

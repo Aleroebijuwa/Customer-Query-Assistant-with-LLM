@@ -1,19 +1,19 @@
 """
 Prompt Engineering Module for Customer Query Assistant
-Constructs effective prompts for LLM inference using query and context.
+Constructs effective prompts for model inference using query and context.
 """
 
 def create_prompt(query: str, context: str, prompt_style: str = "assistant") -> str:
     """
-    Constructs a prompt for an LLM using the given query and context.
+    Constructs a prompt for a model using the given query and context.
 
     Args:
         query (str): The user's question or request.
-        context (str): Relevant information to help the LLM answer the query.
+        context (str): Relevant information to help the model answer the query.
         prompt_style (str): The style of prompt to generate. Options: 'assistant', 'qa', 'instruction'
 
     Returns:
-        str: The formatted prompt string ready for LLM inference.
+        str: The formatted prompt string ready for model inference.
     """
     if prompt_style == "assistant":
         return _create_assistant_prompt(query, context)
@@ -137,7 +137,7 @@ def format_context(context_dict: dict) -> str:
 
 def create_prompt_with_examples(query: str, context: str, examples: list = None) -> str:
     """
-    Creates a prompt with few-shot examples for better LLM guidance.
+    Creates a prompt with few-shot examples for better model guidance.
     
     Args:
         query (str): The user's question
