@@ -3,6 +3,7 @@ import pandas as pd
 from transformers import pipeline
 import time
 from vector_store import retrieve_documents, load_vector_store, get_all_documents
+from bias_detector import analyze_bias, get_bias_warning_message
 
 
 def load_dataset():
@@ -73,6 +74,19 @@ def main():
             retrieval_k = st.slider("Number of documents to retrieve", 1, 5, 3)
         else:
             retrieval_k = 3
+        
+        st.divider()
+        st.subheader("Bias Detection")
+        enable_bias_detection = st.checkbox("Enable Bias Detection", value=True)
+        
+        if enable_bias_detection:
+            bias_threshold = st.slider(
+                "Bias Risk Threshold",
+                0, 10, 5,
+                help="Flag responses with bias score >= threshold"
+            )
+        else:
+            bias_threshold = 10
         
         st.divider()
         st.subheader("Dataset Preview")
@@ -164,10 +178,20 @@ def main():
                         response = result.get("answer", "No answer found")
                         confidence = result.get("score", 0)
                         
+                        # Analyze response for bias
+                        bias_analysis = analyze_bias(response)
+                        
                         st.success("Answer Generated!")
                         st.subheader("Response")
                         st.write(f"**Answer:** {response}")
                         st.metric("Confidence Score", f"{confidence:.1%}")
+                        
+                        # Display bias warning if detected
+                        if enable_bias_detection and bias_analysis['bias_score'] >= bias_threshold:
+                            st.warning(f"Potential bias detected (Risk: {bias_analysis['risk_level']})")
+                            with st.expander("Bias Analysis Details"):
+                                st.write(get_bias_warning_message(bias_analysis))
+                                st.write(f"Bias Score: {bias_analysis['bias_score']}/10")
                         
                         # Display retrieved documents if using RAG
                         if use_rag and retrieved_docs:
@@ -204,9 +228,19 @@ def main():
                         
                         response = result[0]["generated_text"]
                         
+                        # Analyze response for bias
+                        bias_analysis = analyze_bias(response)
+                        
                         st.success("Response Generated!")
                         st.subheader("Response")
                         st.write(response)
+                        
+                        # Display bias warning if detected
+                        if enable_bias_detection and bias_analysis['bias_score'] >= bias_threshold:
+                            st.warning(f"Potential bias detected (Risk: {bias_analysis['risk_level']})")
+                            with st.expander("Bias Analysis Details"):
+                                st.write(get_bias_warning_message(bias_analysis))
+                                st.write(f"Bias Score: {bias_analysis['bias_score']}/10")
                         
                         # Display retrieved documents if using RAG
                         if use_rag and retrieved_docs:
@@ -223,7 +257,8 @@ def main():
                         "model": model_type,
                         "template": prompt_template,
                         "rag_used": use_rag,
-                        "retrieved_docs": retrieved_docs
+                        "retrieved_docs": retrieved_docs,
+                        "bias_analysis": bias_analysis
                     })
                     
                 except Exception as e:
@@ -249,6 +284,16 @@ def main():
                                     st.divider()
                     st.write(f"**Query:** {item['query']}")
                     st.write(f"**Response:** {item['response']}")
+                    
+                    # Display bias analysis from history
+                    if item.get('bias_analysis'):
+                        bias_analysis = item['bias_analysis']
+                        if bias_analysis['is_biased']:
+                            st.warning(f"Bias Risk: {bias_analysis['risk_level']} (Score: {bias_analysis['bias_score']}/10)")
+                            with st.expander("Bias Details"):
+                                st.write(get_bias_warning_message(bias_analysis))
+                        else:
+                            st.success(f"Bias Check: LOW (Score: {bias_analysis['bias_score']}/10)")
         else:
             st.info("No queries processed yet")
     
