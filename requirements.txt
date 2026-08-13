@@ -5,3 +5,5 @@ torch
 pandas
 numpy
 datasets
+faiss-cpu
+sentence-transformers

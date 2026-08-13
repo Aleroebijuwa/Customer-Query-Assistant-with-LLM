@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from transformers import pipeline
 import time
+from vector_store import retrieve_documents, load_vector_store, get_all_documents
 
 
 def load_dataset():
@@ -56,8 +57,8 @@ def main():
         
         model_type = st.selectbox(
             "Select Model Type",
-            ["Question Answering", "Text Generation"],
-            help="Choose between QA pipeline or generative model"
+            ["Question Answering", "Text Generation", "RAG Assistant"],
+            help="Choose between QA pipeline, generative model, or RAG-enhanced assistant"
         )
         
         prompt_template = st.selectbox(
@@ -66,6 +67,11 @@ def main():
             help="Choose how the query is formatted"
         )
         
+        use_rag = st.checkbox("Use RAG System", value=(model_type == "RAG Assistant"))
+        
+        if use_rag:
+            retrieval_k = st.slider("Number of documents to retrieve", 1, 5, 3)
+        
         st.divider()
         st.subheader("Dataset Preview")
         df = load_dataset()
@@ -73,8 +79,15 @@ def main():
             st.metric("Total Queries", len(df))
             if st.button("Show Dataset Sample"):
                 st.dataframe(df.head(10), use_container_width=True)
+        
+        if st.button("Show Knowledge Base"):
+            with st.expander("FAQ & Documentation", expanded=False):
+                docs = get_all_documents()
+                for doc in docs:
+                    st.write(f"**{doc['title']}**")
+                    st.write(doc['content'])
+                    st.divider()
     
-    # Main interface
     col1, col2 = st.columns([3, 1])
     
     with col1:
@@ -98,12 +111,8 @@ def main():
                 sample_queries
             )
     
-    with col2:
-        st.subheader("Context")
-        use_context = st.checkbox("Use Context", value=True)
-    
-    # Context input (if using QA model)
-    if use_context and model_type == "Question Answering":
+    # Context input (if using QA mode without RAG)
+    if not use_rag and model_type == "Question Answering":
         context_text = st.text_area(
             "Enter context text:",
             placeholder="Paste the document or context for the model to search within...",
@@ -134,9 +143,20 @@ def main():
         else:
             with st.spinner("Processing your query..."):
                 try:
+                    retrieved_context = None
+                    retrieved_docs = []
+                    
+                    # Retrieve documents if using RAG
+                    if use_rag:
+                        with st.spinner("Retrieving relevant documents..."):
+                            retrieved_docs = retrieve_documents(user_query, k=retrieval_k if 'retrieval_k' in locals() else 3)
+                            retrieved_context = "\n\n".join(retrieved_docs)
+                    
                     if model_type == "Question Answering":
                         qa_pipeline = load_qa_pipeline()
-                        result = qa_pipeline(question=user_query, context=context_text)
+                        context_to_use = retrieved_context if use_rag else context_text
+                        
+                        result = qa_pipeline(question=user_query, context=context_to_use)
                         
                         response = result.get("answer", "No answer found")
                         confidence = result.get("score", 0)
@@ -146,19 +166,35 @@ def main():
                         st.write(f"**Answer:** {response}")
                         st.metric("Confidence Score", f"{confidence:.1%}")
                         
-                    else:  # Text Generation
+                        # Display retrieved documents if using RAG
+                        if use_rag and retrieved_docs:
+                            with st.expander("Retrieved Context Documents"):
+                                for i, doc in enumerate(retrieved_docs, 1):
+                                    st.write(f"**Document {i}:**")
+                                    st.write(doc)
+                                    st.divider()
+                        
+                    else:  # Text Generation or RAG Assistant
                         gen_pipeline = load_text_generation_pipeline()
                         
-                        if prompt_template == "Assistant Style":
-                            formatted_query = f"Assistant: Help me with this customer query: {user_query}"
-                        elif prompt_template == "Instruction Based":
-                            formatted_query = f"Task: Answer the customer query below.\nQuery: {user_query}\nAnswer:"
+                        if use_rag:
+                            if prompt_template == "Assistant Style":
+                                formatted_query = f"Context: {retrieved_context}\n\nAssistant: Based on the above context, {user_query}"
+                            elif prompt_template == "Instruction Based":
+                                formatted_query = f"Context: {retrieved_context}\n\nTask: Answer the customer query below.\nQuery: {user_query}\nAnswer:"
+                            else:
+                                formatted_query = f"Context: {retrieved_context}\n\nQuery: {user_query}\nAnswer:"
                         else:
-                            formatted_query = user_query
+                            if prompt_template == "Assistant Style":
+                                formatted_query = f"Assistant: Help me with this customer query: {user_query}"
+                            elif prompt_template == "Instruction Based":
+                                formatted_query = f"Task: Answer the customer query below.\nQuery: {user_query}\nAnswer:"
+                            else:
+                                formatted_query = user_query
                         
                         result = gen_pipeline(
                             formatted_query,
-                            max_length=150,
+                            max_length=200,
                             num_return_sequences=1,
                             temperature=0.7
                         )
@@ -168,13 +204,23 @@ def main():
                         st.success("Response Generated!")
                         st.subheader("Response")
                         st.write(response)
+                        
+                        # Display retrieved documents if using RAG
+                        if use_rag and retrieved_docs:
+                            with st.expander("Retrieved Context Documents"):
+                                for i, doc in enumerate(retrieved_docs, 1):
+                                    st.write(f"**Document {i}:**")
+                                    st.write(doc)
+                                    st.divider()
                     
                     # Add to history
                     st.session_state.conversation_history.append({
                         "query": user_query,
                         "response": response,
                         "model": model_type,
-                        "template": prompt_template
+                        "template": prompt_template,
+                        "rag_used": use_rag,
+                        "retrieved_docs": retrieved_docs
                     })
                     
                 except Exception as e:
@@ -191,6 +237,13 @@ def main():
                 with st.expander(f"Query {i}: {item['query'][:50]}..."):
                     st.write(f"**Model:** {item['model']}")
                     st.write(f"**Template:** {item['template']}")
+                    if item.get('rag_used', False):
+                        st.write("**RAG Enabled:** Yes")
+                        if item.get('retrieved_docs'):
+                            with st.expander("Retrieved Documents"):
+                                for doc in item['retrieved_docs']:
+                                    st.write(doc)
+                                    st.divider()
                     st.write(f"**Query:** {item['query']}")
                     st.write(f"**Response:** {item['response']}")
         else:
